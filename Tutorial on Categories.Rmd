@@ -23,7 +23,7 @@ For this example I will use the classic data from the `cars` library
 
 ```{r}
 #loading the source code
-source("Categorize_lm.R")
+source("Improving_MultComp/Categorize_lm.R")
 
 # Example usage
 lm_model <- lm(mpg ~ wt+hp+qsec+vs+am, data = mtcars)
