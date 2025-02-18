@@ -6,7 +6,7 @@ It is based on the paper: I know what I shouldn’t say, but what should I say? 
 
 Because of that I want to create a new funcion to decribe the results in line with their suggestions
 
-# Tutorial to run from githu
+# Tutorial to run from github
 
 First download the folder with the scripts and then use the `source` function to extract the code
 
