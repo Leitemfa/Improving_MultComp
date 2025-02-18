@@ -8,11 +8,11 @@ categorize_association <- function(lm_model) {
   classify_coefficient <- function(estimate, p_value, ci_range, estimated_strength) {
     ci_category <- ifelse(ci_range > 1, "wide", "narrow")
     
-    if (p_value < 0.01) {
+    if (p_value < 0.05) {
       if (estimated_strength == "weak") return("(1) Weak estimated association and in favor of association")
       if (estimated_strength == "moderate") return("(2) Moderate estimated association and in favor of association")
       if (estimated_strength == "strong") return("(3) Strong estimated association and in favor of association")
-    } else if (p_value >= 0.01 && p_value < 0.2) {
+    } else if (p_value >= 0.05 && p_value < 0.2) {
       if (estimated_strength == "weak") return("(4) Weak estimated association and possible association")
       if (estimated_strength == "moderate") return("(5) Moderate estimated association and possible association")
       if (estimated_strength == "strong") return("(6) Strong estimated association and possible association")
@@ -47,7 +47,3 @@ categorize_association <- function(lm_model) {
   return(result)
 }
 
-# Example usage
-lm_model <- lm(mpg ~ wt, data = mtcars)
-View(categorize_association(lm_model))
-# Output: Detailed summary with classifications for each coefficient
